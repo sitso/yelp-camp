@@ -1,5 +1,6 @@
 body {
-    background-color: #FFFAFA;    
+    background-color: #FFFAFA;
+    padding-top: 70px;    
 }
 
 .jumbotron {
@@ -10,15 +11,12 @@ body {
     text-align: center;
 }
 
-.imgDiv {
-    max-width: 600px;
-    max-height: 600px;
-}
-
 .thumbnail {
     padding: 0;
     overflow: hidden;
     border: none;
+    text-align: center;
+    
 }
 
 .thumbnail img {
@@ -26,14 +24,40 @@ body {
     height: 300px;
     background-position: center center;
     background-repeat: no-repeat;
-    
+    position: relative;
+    -webkit-filter: none;
 }
 
-.thumbnail .caption h4 {
-    margin-top: 2px;
+.thumbnail img:hover {
+    cursor: pointer;
+    -webkit-filter: opacity(.4); 
+}
+
+.thumbnail img:hover ~ .imgCaption {
+    display: none;
+}
+.thumbnail img:hover ~ .desc {
+    display: inline;
+    position: absolute;
+    color: black;
+    top: 10%;
+    left: 15%;
+}
+
+.desc {
+    display: none;
+}
+
+.imgCaption {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
 }
 
 .delete-form {
     display: inline;
 }
+
 
