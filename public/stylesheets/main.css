@@ -6,6 +6,7 @@ body {
 /*----- INDEX ------ */
 .jumbotron {
     background: transparent;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .indexContainer {
@@ -17,7 +18,7 @@ body {
     overflow: hidden;
     border: none;
     text-align: center;
-    
+    font-family: 'Montserrat', sans-serif;
 }
 
 .thumbnailIndex a img {
@@ -27,6 +28,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     -webkit-filter: none;
+    transition: all 0.1s ease-in-out;
 }
 
 .thumbnailIndex img:hover {
@@ -35,30 +37,43 @@ body {
 }
 
 .thumbnailIndex a:hover ~ .imgCaption {
-    display: none;
+    visibility: hidden;
+    
+    
 }
 .thumbnailIndex a:hover ~ .desc {
-    display: inline;
-    position: absolute;
-    color: black;
-    top: 10%;
-    left: 15%;
+    visibility: visible;
 }
 
 .desc {
-    display: none;
+    width: 80%;
+    font-size: 16px;
+    visibility: hidden;
+    position: absolute;
+    color: black;
+    top: 10%;
+    left: 10%;
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
 }
 
 .imgCaption {
     font-size: 30px;
     color: white;
     position: absolute;
-    bottom: 3%;
+    bottom: 5%;
     left: 5%;
+    visibility: visible;
+    transition: all 0.1s ease-in-out;
+    
 }
 
 /*----- SHOW ------ */
 
 .delete-form {
     display: inline;
+}
+
+.thumbnailShow {
+    padding: 0;
 }
