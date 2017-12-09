@@ -12,7 +12,7 @@ body {
     text-align: center;
 }
 
-.thumbnail {
+.thumbnailIndex {
     padding: 0;
     overflow: hidden;
     border: none;
@@ -20,7 +20,7 @@ body {
     
 }
 
-.thumbnail a img {
+.thumbnailIndex a img {
     width: 100%;
     height: 300px;
     background-position: center center;
@@ -29,15 +29,15 @@ body {
     -webkit-filter: none;
 }
 
-.thumbnail img:hover {
+.thumbnailIndex img:hover {
     cursor: pointer;
     -webkit-filter: opacity(.4); 
 }
 
-.thumbnail a:hover ~ .imgCaption {
+.thumbnailIndex a:hover ~ .imgCaption {
     display: none;
 }
-.thumbnail a:hover ~ .desc {
+.thumbnailIndex a:hover ~ .desc {
     display: inline;
     position: absolute;
     color: black;
