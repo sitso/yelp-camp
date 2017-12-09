@@ -3,6 +3,7 @@ body {
     padding-top: 70px;    
 }
 
+/*----- INDEX ------ */
 .jumbotron {
     background: transparent;
 }
@@ -19,7 +20,7 @@ body {
     
 }
 
-.thumbnail img {
+.thumbnail a img {
     width: 100%;
     height: 300px;
     background-position: center center;
@@ -33,10 +34,10 @@ body {
     -webkit-filter: opacity(.4); 
 }
 
-.thumbnail img:hover ~ .imgCaption {
+.thumbnail a:hover ~ .imgCaption {
     display: none;
 }
-.thumbnail img:hover ~ .desc {
+.thumbnail a:hover ~ .desc {
     display: inline;
     position: absolute;
     color: black;
@@ -52,12 +53,12 @@ body {
     font-size: 30px;
     color: white;
     position: absolute;
-    bottom: 5%;
+    bottom: 3%;
     left: 5%;
 }
+
+/*----- SHOW ------ */
 
 .delete-form {
     display: inline;
 }
-
-
