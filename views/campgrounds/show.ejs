@@ -1,13 +1,25 @@
 <% include ../partials/header %>
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
-            <div class="list-group">
-                <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
-            </div>
-            <div id="map"></div>
+            <p class="lead infoP">Information</p>
+            <hr>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="true">Map</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="facilities-tab" data-toggle="tab" href="#facilities" role="tab" aria-controls="facilities" aria-selected="false">Facilities</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="cost-tab" data-toggle="tab" href="#cost" role="tab" aria-controls="cost" aria-selected="false">Cost</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="location" role="tabpanel" aria-labelledby="location-tab"><div id="map"></div></div>
+                <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">...</div>
+                <div class="tab-pane fade" id="cost" role="tabpanel" aria-labelledby="cost-tab">...</div>
+              </div>
+            
         </div>
         <div class="col-md-9">
             <div class="thumbnail thumbnailShow">
