@@ -14,7 +14,7 @@
                         <a href="/campgrounds/<%= el._id %>">
                             <img id="image" src="<%= el.image %>" />
                         </a>
-                        <div class="desc"><%= el.description %>...</div> 
+                        <div class="desc"><%= el.description.substring(0, 400) %>...</div> 
                         <h4 class="imgCaption"><%= el.name %></h4>
                     </div>
                 </div>
