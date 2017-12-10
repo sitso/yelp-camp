@@ -7,9 +7,7 @@
                 <li class="list-group-item">Info 2</li>
                 <li class="list-group-item">Info 3</li>
             </div>
-            <div class="map">
-
-            </div>
+            <div id="map"></div>
         </div>
         <div class="col-md-9">
             <div class="thumbnail thumbnailShow">
@@ -72,8 +70,8 @@
 
     <script>
         function initMap() {
-            var lat = campground.lat;
-            var lng = campground.lng;
+            var lat = <%=campground.lat%>;
+            var lng = <%=campground.lng%>;
             var center = {lat: lat, lng: lng };
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 8,
@@ -96,7 +94,7 @@
             infowindow.open(map, marker);
             });
         }
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ1KDwhBawx61hSZG_3d5k_gdyvmqkmhE&callback=initMap"></script>
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ1KDwhBawx61hSZG_3d5k_gdyvmqkmhE&callback=initMap"></script>
 
 <% include ../partials/footer %>

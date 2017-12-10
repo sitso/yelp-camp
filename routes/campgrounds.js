@@ -1,7 +1,8 @@
-var express = require("express"),
-    Campground = require("../models/campground"),
-    middleware = require("../middleware"),
-    router = express.Router();
+var express     = require("express"),
+    Campground  = require("../models/campground"),
+    middleware  = require("../middleware"),
+    router      = express.Router(),
+    geocoder    = require("geocoder");
 
 
 // display all campgrounds
@@ -49,7 +50,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
         var lat = data.results[0].geometry.location.lat;
         var lng = data.results[0].geometry.location.lng;
         var location = data.results[0].formatted_address;
-        var newCampground = { name: name, image: image, description: desc, price: price, author: author, location: location, lat: lat, lng: lng};
+        var newCampground = { name: name, image: image, description: desc, price: price, location: location, lat: lat, lng: lng, author: author};
         Campground.create(newCampground, function (err, newlyCreated) {
             if (err) {
                 console.log(err);
@@ -74,8 +75,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
         var lat = data.results[0].geometry.location.lat;
         var lng = data.results[0].geometry.location.lng;
         var location = data.results[0].formatted_address;
-        var newData = {name: req.body.name, image: req.body.image, description: req.body.description, price: req.body.price, location: location, lat: lat, lng: lng};
-        Campground.findByIdAndUpdate(req.params.id, {$set: newData}, function (err, updatedCampground) {
+        var newData = {name: req.body.campground.name, image: req.body.campground.image, description: req.body.campground.description, 
+            price: req.body.campground.price, location: location, lat: lat, lng: lng};
+        Campground.findByIdAndUpdate(req.params.id, newData, function (err, updatedCampground) {
             if (err) {
                 res.redirect("/campgrounds");
             }

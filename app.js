@@ -8,9 +8,8 @@ var express         = require("express"),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
     methodOverride  = require("method-override"),
-    flash           = require("connect-flash"),
-    geocoder        = require("geocoder");
-
+    flash           = require("connect-flash");
+  
 //requiring routes   
 var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
@@ -22,7 +21,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-
+ 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
     secret: "Rusty wins cutest dog",
