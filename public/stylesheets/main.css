@@ -1,6 +1,5 @@
 body {
     background-color: #FFFAFA;
-    padding-top: 70px;    
 }
 
 /*----- INDEX ------ */
@@ -76,4 +75,14 @@ body {
 
 .thumbnailShow {
     padding: 0;
+}
+
+/*---- LOGIN && REGISTER ----- */
+.loginRow h1 {
+    text-align: center;
+}
+
+.loginDiv {
+    width: 30%;
+    margin: 25px auto;
 }
