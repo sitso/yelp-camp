@@ -8,7 +8,8 @@ var express         = require("express"),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
     methodOverride  = require("method-override"),
-    flash           = require("connect-flash");
+    flash           = require("connect-flash"),
+    geocoder        = require("geocoder");
 
 //requiring routes   
 var commentRoutes       = require("./routes/comments"),

@@ -76,7 +76,7 @@ body {
     padding: 0;
 }
 
-/*---- LOGIN && REGISTER ----- */
+/*----- LOGIN && REGISTER ----- */
 .loginRow h1 {
     text-align: center;
 }
@@ -84,4 +84,10 @@ body {
 .loginDiv {
     width: 30%;
     margin: 25px auto;
+}
+
+/*----- MAP ----- */
+#map {
+    height: 400px;
+    width: 100%;
 }
