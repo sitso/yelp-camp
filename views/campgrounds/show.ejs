@@ -16,8 +16,12 @@
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="location" role="tabpanel" aria-labelledby="location-tab"><div id="map"></div></div>
-                <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">...</div>
-                <div class="tab-pane fade" id="cost" role="tabpanel" aria-labelledby="cost-tab">...</div>
+                <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    ...
+                </div>
+                <div class="tab-pane fade" id="cost" role="tabpanel" aria-labelledby="cost-tab">
+                    ...    
+                </div>
               </div>
             
         </div>
@@ -26,7 +30,8 @@
                 <img class="img-responsive" src="<%= campground.image %>"></img>
                 <div class="caption-full caption">
                     <h4 class="pull-right">$
-                        <%= campground.price %>/night</h4>
+                        <%= campground.price %>/night
+                    </h4>
                     <h4>
                         <a>
                             <%=campground.name %>
