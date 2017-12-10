@@ -4,7 +4,7 @@ var Campground = require("../models/campground"),
     Comment = require("../models/comment"),
     middleware = require("../middleware");
 
-//Display add new comments form
+// display add new comments form
 router.get("/new", middleware.isLoggedIn, function (req, res) {
     Campground.findById(req.params.id, function (err, campground) {
         if (err) {
@@ -16,7 +16,7 @@ router.get("/new", middleware.isLoggedIn, function (req, res) {
     })
 });
 
-//Add comment
+// add comment
 router.post("/", middleware.isLoggedIn, function (req, res) {
     Campground.findById(req.params.id, function (err, campground) {
         if (err) {
@@ -44,7 +44,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
     })
 });
 
-//show edit comment form
+// show edit comment form
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req, res) {
     Comment.findById(req.params.comment_id, function (err, foundComment) {
         if (err) {
@@ -56,6 +56,7 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req,
     });
 });
 
+// update comment
 router.put("/:comment_id", middleware.checkCommentOwnership, function (req, res) {
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function (err, updateComment) {
         if (err) {
@@ -67,6 +68,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function (req, res)
     })
 });
 
+// remove comment
 router.delete("/:comment_id", middleware.checkCommentOwnership, function (req, res) {
     Comment.findByIdAndRemove(req.params.comment_id, function (err) {
         if (err) {
@@ -78,7 +80,5 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function (req, r
         }
     })
 });
-
-
 
 module.exports = router;

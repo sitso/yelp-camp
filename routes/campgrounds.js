@@ -4,25 +4,25 @@ var express = require("express"),
     router = express.Router();
 
 
-//Display all campgrounds
+// display all campgrounds
 router.get("/", function (req, res) {
     Campground.find({}, function (err, allCampgrounds) {
         if (err) {
             console.log(err);
         }
         else {
-            res.render("campgrounds/index", { campgrounds: allCampgrounds });
+            res.render("campgrounds/index", { campgrounds: allCampgrounds, page: "campgrounds"});
         }
     });
 });
 
-//Dispaly new campground form
+// dispaly new campground form
 router.get("/new", middleware.isLoggedIn, function (req, res) {
     res.render("campgrounds/new");
 });
 
 
-// GET - show more info about a campground
+// show more info about a campground
 router.get("/:id", function (req, res) {
     // find campground with the specific id
     Campground.findById(req.params.id).populate("comments").exec(function (err, foundCampground) {
@@ -37,7 +37,6 @@ router.get("/:id", function (req, res) {
 
 // add a new campground
 router.post("/", middleware.isLoggedIn, function (req, res) {
-    // get data from form and add to campgrounds array
     var name = req.body.name;
     var image = req.body.image;
     var desc = req.body.description;
@@ -76,7 +75,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
     });
 });
 
-//delete
+// delete
 router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
     Campground.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
