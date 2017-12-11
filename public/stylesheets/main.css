@@ -1,5 +1,10 @@
 body {
     background-color: #FFFAFA;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(211,211,211, 0.4);
 }
 
 /*----- INDEX ------ */
