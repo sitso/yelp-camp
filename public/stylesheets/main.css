@@ -31,13 +31,13 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    -webkit-filter: none;
+    filter: none;
     transition: all 0.1s ease-in-out;
 }
 
 .thumbnailIndex img:hover {
     cursor: pointer;
-    -webkit-filter: opacity(.4); 
+    filter: opacity(.4); 
 }
 
 .thumbnailIndex a:hover ~ .imgCaption {
